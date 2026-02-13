@@ -1,27 +1,13 @@
+import * as external from "./external.js";
+
 // THIS IS A RETRY FILE
 
-const adventurer = {
-name: "Robin",
-health: 10,
-inventory: ["sword", "potion", "artifact"],
-companion: {
-    name: "Leo",
-    type: "Cat",
-    companion: {
-        name: "Frank",
-        type: "Flea"
-}
-},
-    roll (mod = 0) {
-        const result = Math.floor(Math.random() * 20) + 1 + mod;
-        console.log(`${this.name} rolled a ${result}.`)
-        }
-}
+
+let adventurer = external.robin();
+console.log(adventurer.inventory[0])
 
 
-console.log(adventurer.inventory[0]);
-
-for (item of adventurer.inventory){
+for (let item of adventurer.inventory){
     console.log(item);
 }
 
@@ -153,7 +139,7 @@ console.log(robin.role);
 //robin.duel(robin, robin)
 
 
-
+// REPLACE
 class AdventurerFactory {  
     constructor(role, oldRole, subject){ // Had to modify it since it wasn't working
         this.role = role;
@@ -184,7 +170,7 @@ class AdventurerFactory {
 //robin = healers.generate("Robin");
 
 
-crow = new Adventurer("Crow"); //REDECLARATION TO NEW CLASSES
+let crow = new Adventurer("Crow"); //REDECLARATION TO NEW CLASSES
 crow.inventory = ["sword", "shield", "potion"];
 
     
