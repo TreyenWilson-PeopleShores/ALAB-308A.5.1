@@ -133,7 +133,7 @@ function getLearnerData(course, ag, submissions) {
             if(isNaN(submissions[i].submission.score)){
                 NotANumberError();
             }
-        }
+        } 
     } catch(error){
         console.log("There was an error: " + error.message);
     }
