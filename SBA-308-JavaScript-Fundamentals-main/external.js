@@ -28,3 +28,7 @@ const AssignmentGroup = {
 export function assignmentGroups(){
     return AssignmentGroup;
 }
+
+export function NotANumberError(number){
+    throw new Error("That is not a valid number.");
+}

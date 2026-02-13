@@ -52,9 +52,7 @@ const LearnerSubmissions = [
   }
 ];
 
-function NotANumberError(number){
-    throw new Error("That is not a valid number.");
-}
+
 
 function LaterDate(dueDate, submittedDate){ //Checks to see if Due date is before submitted date, if so, returns true.
     let date1 = new Date(dueDate); let date2 = new Date(submittedDate); // Makes both dates into usable formats
@@ -102,11 +100,11 @@ function getLearnerData(course, ag, submissions) {
         }
         for(let i = 0; i<ag.assignments.length; i++){
             if(isNaN(ag.assignments[i].points_possible)){
-                NotANumberError();
+                external.NotANumberError();
             }
         } for(let i = 0; i<submissions.length; i++){
             if(isNaN(submissions[i].submission.score)){
-                NotANumberError();
+                external.NotANumberError();
             }
         }
     } catch(error){
